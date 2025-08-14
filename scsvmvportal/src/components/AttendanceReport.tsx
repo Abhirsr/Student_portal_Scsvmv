@@ -27,9 +27,11 @@ type AttendanceReportProps = {
 
 const AttendanceReport = ({ chartData }: AttendanceReportProps) => {
   return (
-    <div className="p-4 rounded-lg border w-full max-w-md bg-white shadow">
-      <h2 className="text-lg font-semibold mb-2">Attendance Report</h2>
-      <Bar data={chartData} />
+    <div className='h-50px w-50px'>
+      <div className="p-4 rounded-lg border w-full max-w-md bg-white shadow">
+        <h2 className="text-lg font-semibold mb-2">Attendance Report</h2>
+        <Bar data={chartData} />
+      </div>
     </div>
   )
 }
