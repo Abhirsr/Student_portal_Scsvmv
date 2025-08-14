@@ -1,8 +1,12 @@
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <div>
-      {/* Common layout for /dashboard pages */}
+      {/* You can add sidebar/header here if you want */}
       {children}
     </div>
-  );
+  )
 }
