@@ -19,7 +19,7 @@ const statusColor = {
 
 const EventUpdates = ({ events, date }: EventUpdatesProps) => {
   return (
-    <div className="h-50px w-50px">
+    <div className="h-50px md:w-40px w-full">
       <div className="p-4 rounded-lg border w-full max-w-sm bg-blue-50 shadow">
         <h2 className="text-xl font-bold mb-4 text-blue-900">
           {date || 'Event Updates'}

@@ -60,50 +60,61 @@ export default function DashboardPage() {
     { title: "Medical Request Rejected", time: "02:00 PM", status: "rejected" },
     { title: "Ticket Approved", time: "02:30 PM", status: "approved" },
     { title: "Leave Request Pending", time: "03:15 PM", status: "pending" },
+    { title: "Medical Request Rejected", time: "02:00 PM", status: "rejected" },
+    { title: "Ticket Approved", time: "02:30 PM", status: "approved" },
+    { title: "Leave Request Pending", time: "03:15 PM", status: "pending" },
   ];
 
   // 3. The final, combined layout
+  // The final, responsive layout
   return (
-    <main className="p-8 space-y-8">
+    // 1. Corrected typo and re-applied centering classes
+    <main className="flex flex-col items-center w-full p-4 md:p-8 space-y-8">
       {/* --- ROW 1: Key Stats --- */}
-      <div className="flex justify-center mt-10 gap-30">
+      <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-30 mt-20">
         <InfoCard title="Attendance" value={75} icon={Users} />
         <InfoCard title="Fee Status " value="pending" icon={Monitor} />
         <InfoCard title="C.G.P.A" value={9.3} icon={GraduationCap} />
       </div>
 
-      {/* --- ROW 2: Main Charts --- */}
-      <div className="grid gap-6 md:grid-cols-2">
+      {/* --- ROW 2: Main Charts & Events --- */}
+      <div className="w-full max-w-screen-xl justify-center grid grid-cols-1 md:grid-cols-3 gap-6">
         <LeavesTaken chartData={leavesData} />
         <AttendanceReport chartData={attendanceData} />
+        <EventUpdates date="8 July" events={events} />
       </div>
 
-      {/* --- ROW 3: Upcoming Exams --- */}
-      <div className="grid grid-cols-1">
-        <ExamBoard title="Upcoming Exams" exams={examData} />
-      </div>
+      {/* --- NEW COMBINED ROW 3: Exams & Leave Statuses --- */}
+      {/* 2. Removed fixed width and corrected gap */}
+      <div className="w-full max-w-screen-xl grid grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Left side: Exam Board taking up 2/3 of the space */}
+        <div className="lg:col-span-2 w-full">
+          <ExamBoard title="Exam Board" exams={examData} />
+        </div>
 
-      {/* --- ROW 4: Detailed Info Cards & Activity --- */}
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <LeaveStatusCard
-          title="Medical-Leave"
-          approved={3}
-          rejected={1}
-          pending={1}
-        />
-        <LeaveStatusCard
-          title="On-Duty"
-          approved={5}
-          rejected={2}
-          pending={2}
-        />
-        <LeaveStatusCard
-          title="Internships"
-          approved={0}
-          rejected={0}
-          pending={1}
-        />
-        <EventUpdates date="14 August 2025" events={events} />
+        {/* Right side: Leave cards stacked vertically */}
+        {/* 3. Changed flex-row to flex-col to stack cards correctly */}
+        <div className="flex flex-row gap-6 w-full">
+          <LeaveStatusCard
+            title="Medical-Leave"
+            approved={3}
+            rejected={1}
+            pending={2}
+          />
+          <LeaveStatusCard
+            title="On-Duty"
+            approved={5}
+            rejected={2}
+            pending={3}
+          />
+          <LeaveStatusCard
+            title="Internships"
+            approved={0}
+            rejected={0}
+            pending={5}
+          />
+          
+        </div>
       </div>
     </main>
   );
