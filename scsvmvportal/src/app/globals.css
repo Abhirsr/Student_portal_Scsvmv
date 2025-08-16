@@ -134,3 +134,79 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+/* Prevent horizontal overflow */
+.dashboard-container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure charts don't overflow */
+.chart-container {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Exam board and leave status layout */
+.exam-board-container {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.leave-status-container {
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Responsive layout adjustments for sidebar state */
+@media (max-width: 1280px) {
+  .dashboard-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* When sidebar is collapsed, adjust spacing */
+.sidebar-collapsed .dashboard-container {
+  margin-left: 0;
+  width: 100%;
+}
+
+/* Header responsive behavior */
+.header-container {
+  width: 100vw;
+  min-width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+/* Ensure header fills full width when sidebar is collapsed */
+@media (min-width: 1024px) {
+  .header-container {
+    width: 100%;
+    min-width: 100%;
+  }
+}
