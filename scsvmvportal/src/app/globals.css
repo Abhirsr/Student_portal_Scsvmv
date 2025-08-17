@@ -161,7 +161,8 @@ body {
 
 /* Prevent horizontal overflow */
 .dashboard-container {
-  max-width: 100%;
+  max-width: none;
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -198,9 +199,8 @@ body {
 
 /* Header responsive behavior */
 .header-container {
-  width: 100vw;
-  min-width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  width: 100%;
+  min-width: 100%;
 }
 
 /* Ensure header fills full width when sidebar is collapsed */
@@ -209,4 +209,34 @@ body {
     width: 100%;
     min-width: 100%;
   }
+}
+
+/* Force header to full width */
+.header-container > div {
+  width: 100% !important;
+  min-width: 100% !important;
+}
+
+/* Ensure header background extends fully */
+.header-container {
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+/* Override any max-width constraints */
+.header-container,
+.header-container > div {
+  max-width: none !important;
+}
+
+/* Dashboard content expansion when sidebar is collapsed */
+.dashboard-container {
+  transition: all 0.3s ease;
+}
+
+/* Ensure content expands to fill available space */
+.dashboard-container > div {
+  width: 100%;
+  max-width: none;
 }

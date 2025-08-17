@@ -8,14 +8,14 @@ import { ReactNode } from "react";
 export default function MainLayout({ children }: { children: ReactNode }) {
   return (
     <SidebarProvider>
-      <div className="flex min-h-screen w-full relative overflow-x-hidden">
+      <div className="flex min-h-screen w-screen relative">
         <AppSidebar />
 
-        <div className="flex-1 flex flex-col overflow-x-hidden transition-all duration-300 min-w-0">
+        <div className="flex-1 flex flex-col overflow-x-hidden transition-all duration-300 min-w-0 w-full">
           <div className="w-full min-w-full header-container">
             <Header loggedIn={true} />
           </div>
-          <main className="flex-1 overflow-y-auto overflow-x-hidden transition-all duration-300">
+          <main className="flex-1 overflow-y-auto overflow-x-hidden transition-all duration-300 w-full max-w-none">
             {children}
           </main>
         </div>

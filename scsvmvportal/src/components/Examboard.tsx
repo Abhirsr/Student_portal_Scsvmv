@@ -14,7 +14,7 @@ interface ExamBoardProps {
 
 export default function ExamBoard({ title, exams }: ExamBoardProps) {
   return (
-    <div className="bg-white shadow rounded-lg p-4 h-full w-full">
+    <div className="bg-white shadow rounded-lg p-4 h-full md:w-150 w-full">
       {/* Header */}
       <div className="flex items-center gap-2 mb-4">
         <BookOpen className="text-blue-600" />

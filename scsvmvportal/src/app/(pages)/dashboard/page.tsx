@@ -71,14 +71,14 @@ export default function DashboardPage() {
     // 1. Corrected typo and re-applied centering classes
     <main className="flex flex-col items-center w-full p-4 md:p-8 space-y-8 dashboard-container">
       {/* --- ROW 1: Key Stats --- */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 w-full">
         <InfoCard title="Attendance" value={75} icon={Users} />
         <InfoCard title="Fee Status " value="pending" icon={Monitor} />
         <InfoCard title="C.G.P.A" value={9.3} icon={GraduationCap} />
       </div>
 
       {/* --- ROW 2: Main Charts & Events --- */}
-      <div className="w-full max-w-screen-xl grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 chart-container">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 chart-container">
         <LeavesTaken chartData={leavesData} />
         <AttendanceReport chartData={attendanceData} />
         <EventUpdates date="8 July" events={events} />
@@ -86,15 +86,15 @@ export default function DashboardPage() {
 
       {/* --- NEW COMBINED ROW 3: Exams & Leave Statuses --- */}
       {/* 2. Removed fixed width and corrected gap */}
-      <div className="w-full max-w-screen-xl grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {/* Left side: Exam Board taking up 3/4 of the space on xl screens, full width on smaller */}
-        <div className="xl:col-span-3 w-full exam-board-container">
+        <div className="xl:col-span-2 w-full exam-board-container">
           <ExamBoard title="Exam Board" exams={examData} />
         </div>
 
         {/* Right side: Leave cards stacked vertically */}
         {/* 3. Changed flex-row to flex-col to stack cards correctly */}
-        <div className="flex flex-col gap-4 w-full leave-status-container">
+        <div className="flex flex-row gap-4 w-full leave-status-container">
           <LeaveStatusCard
             title="Medical-Leave"
             approved={3}
