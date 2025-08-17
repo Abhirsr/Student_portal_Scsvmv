@@ -11,9 +11,13 @@ export default function MainLayout({ children }: { children: ReactNode }) {
       <div className="flex min-h-screen w-screen ">
         <AppSidebar />
 
-        <div className="flex-1 flex flex-col">
-          <Header loggedIn={true} />
-          <main className="flex-1">{children}</main>
+        <div className="flex-1 flex flex-col overflow-x-hidden transition-all duration-300 min-w-0 w-full">
+          <div className="w-full min-w-full header-container">
+            <Header loggedIn={true} />
+          </div>
+          <main className="flex-1 overflow-y-auto overflow-x-hidden transition-all duration-300 w-full max-w-none">
+            {children}
+          </main>
         </div>
       </div>
     </SidebarProvider>

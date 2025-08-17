@@ -19,10 +19,10 @@ type LeavesTakenProps = {
 
 const LeavesTaken = ({ chartData }: LeavesTakenProps) => {
   return (
-    <div className="flex flex-col items-center p-4 rounded-lg border w-[250px] bg-white shadow">
-      <h2 className="text-lg font-semibold">Leaves Taken</h2>
+    <div className="w-full p-4 rounded-lg border bg-white shadow">
+      <h2 className="text-lg font-semibold mb-2">Leaves Taken</h2>
       <Doughnut data={chartData} />
-      <ul className="mt-4 text-sm">
+      <ul className="mt-4 space-y-2 text-sm">
         {chartData.labels.map((label, idx) => (
           <li key={idx}>
             <span
