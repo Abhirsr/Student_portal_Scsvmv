@@ -9,7 +9,12 @@ import { Users, Monitor, GraduationCap } from "lucide-react";
 
 export default function DashboardPage() {
   // 2. All data from both versions is now in one component
-  const examData = [
+  const examData: {
+    name: string;
+    course: string;
+    date: string;
+    time: string;
+  }[] = [
     {
       name: "Maths Final",
       course: "Mathematics",
@@ -68,54 +73,17 @@ export default function DashboardPage() {
   // 3. The final, combined layout
   // The final, responsive layout
   return (
-    // 1. Corrected typo and re-applied centering classes
-    <main className="flex flex-col items-center w-full p-4 md:p-8 space-y-8">
-      {/* --- ROW 1: Key Stats --- */}
-      <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-30 mt-20">
+    <div className="flex flex-col gap-4 overflow-hidden">
+      <div className="flex flex-row  md:px-30 px-0 justify-between gap-3 py-10">
         <InfoCard title="Attendance" value={75} icon={Users} />
         <InfoCard title="Fee Status " value="pending" icon={Monitor} />
         <InfoCard title="C.G.P.A" value={9.3} icon={GraduationCap} />
       </div>
-
-      {/* --- ROW 2: Main Charts & Events --- */}
-      <div className="w-full max-w-screen-xl justify-center grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="flex flex-col md:flex-row md:px-30 px-0 justify-between gap-3  items-center">
         <LeavesTaken chartData={leavesData} />
         <AttendanceReport chartData={attendanceData} />
-        <EventUpdates date="8 July" events={events} />
+        <EventUpdates events={events} />
       </div>
-
-      {/* --- NEW COMBINED ROW 3: Exams & Leave Statuses --- */}
-      {/* 2. Removed fixed width and corrected gap */}
-      <div className="w-full max-w-screen-xl grid grid-cols-2 lg:grid-cols-3 gap-4">
-        {/* Left side: Exam Board taking up 2/3 of the space */}
-        <div className="lg:col-span-2 w-full">
-          <ExamBoard title="Exam Board" exams={examData} />
-        </div>
-
-        {/* Right side: Leave cards stacked vertically */}
-        {/* 3. Changed flex-row to flex-col to stack cards correctly */}
-        <div className="flex flex-row gap-6 w-full">
-          <LeaveStatusCard
-            title="Medical-Leave"
-            approved={3}
-            rejected={1}
-            pending={2}
-          />
-          <LeaveStatusCard
-            title="On-Duty"
-            approved={5}
-            rejected={2}
-            pending={3}
-          />
-          <LeaveStatusCard
-            title="Internships"
-            approved={0}
-            rejected={0}
-            pending={5}
-          />
-          
-        </div>
-      </div>
-    </main>
+    </div>
   );
 }

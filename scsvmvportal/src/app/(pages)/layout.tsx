@@ -8,7 +8,7 @@ import { ReactNode } from "react";
 export default function MainLayout({ children }: { children: ReactNode }) {
   return (
     <SidebarProvider>
-      <div className="flex min-h-screen w-screen relative">
+      <div className="flex min-h-screen w-screen ">
         <AppSidebar />
 
         <div className="flex-1 flex flex-col">

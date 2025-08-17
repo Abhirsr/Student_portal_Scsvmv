@@ -1,49 +1,51 @@
-import { BookOpen } from "lucide-react"
+import { BookOpen } from "lucide-react";
 
 interface Exam {
-  name: string
-  course: string
-  date: string
-  time: string
+  name: string;
+  course: string;
+  date: string;
+  time: string;
 }
 
 interface ExamBoardProps {
-  title: string
-  exams: Exam[]
+  exams: Exam[];
 }
 
-export default function ExamBoard({ title, exams }: ExamBoardProps) {
+export default function ExamBoard({ exams }: ExamBoardProps) {
   return (
-      <div className="bg-white shadow rounded-lg p-4 h-full md:w-150 w-full">
-        {/* Header */}
-        <div className="flex items-center gap-2 mb-4">
-          <BookOpen className="text-blue-600" />
-          <h2 className="text-lg font-semibold text-blue-900">{title}</h2>
-        </div>
-
-        {/* Table */}
-        <div className="overflow-x-auto">
-          <table className="min-w-full text-sm text-left text-blue-900">
-            <thead className="border-b">
-              <tr>
-                <th className="px-4 py-2">Exam Name</th>
-                <th className="px-4 py-2">Course</th>
-                <th className="px-4 py-2">Date</th>
-                <th className="px-4 py-2">Time</th>
-              </tr>
-            </thead>
-            <tbody>
-              {exams.map((exam, idx) => (
-                <tr key={idx} className="border-b last:border-none">
-                  <td className="px-4 py-2">{exam.name}</td>
-                  <td className="px-4 py-2">{exam.course}</td>
-                  <td className="px-4 py-2">{exam.date}</td>
-                  <td className="px-4 py-2">{exam.time}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+    <div className="flex flex-col  items-start  rounded-xl border bg-white shadow-md ">
+      {/* Header */}
+      <div className="flex items-center gap-3 mb-2">
+        <BookOpen className="text-blue-600 w-7 h-7" />
+        <h2 className="text-2xl font-bold text-blue-900">Exam Board</h2>
       </div>
-  )
+
+      {/* Table */}
+      <div>
+        <table className="w-full text-sm text-left text-blue-900">
+          <thead className="border-b bg-blue-50">
+            <tr>
+              <th className="px-4 py-2 font-semibold">Exam Name</th>
+              <th className="px-4 py-2 font-semibold">Course</th>
+              <th className="px-4 py-2 font-semibold">Date</th>
+              <th className="px-4 py-2 font-semibold">Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            {exams.map((exam, idx) => (
+              <tr
+                key={idx}
+                className="border-b last:border-none hover:bg-blue-100/40 transition-colors"
+              >
+                <td className="px-4 py-2 whitespace-nowrap">{exam.name}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{exam.course}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{exam.date}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{exam.time}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 }
