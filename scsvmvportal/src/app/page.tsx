@@ -1,12 +1,13 @@
-import { Button } from "@/components/ui/button";
-import React from "react";
+// 
+"use client";
 
-function page() {
+import SemesterTable from "@/components/SemesterTable";
+
+export default function Page() {
   return (
-    <div className="flex items-center justify-center h-screen ">
-      <p className="text-3xl">Hello World</p>
-    </div>
+    <main className="p-4">
+      <h1 className="text-2xl font-bold mb-4"></h1>
+      <SemesterTable />
+    </main>
   );
 }
-
-export default page;
