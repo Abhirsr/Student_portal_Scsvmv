@@ -19,7 +19,7 @@ type LeavesTakenProps = {
 
 const LeavesTaken = ({ chartData }: LeavesTakenProps) => {
   return (
-    <div className="w-full p-4 rounded-lg border bg-white shadow">
+    <div className="md:w-[350px] w-[100%] p-4 rounded-lg border bg-white shadow">
       <h2 className="text-lg font-semibold mb-2">Leaves Taken</h2>
       <Doughnut data={chartData} />
       <ul className="mt-4 space-y-2 text-sm">

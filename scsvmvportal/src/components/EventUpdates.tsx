@@ -19,12 +19,12 @@ const statusColor = {
 
 const EventUpdates = ({ events, date }: EventUpdatesProps) => {
   return (
-    <div className="h-[300px] w-[300px] overflow-y-scroll">
-      <div className="p-4 rounded-lg border w-full max-w-sm bg-blue-50 shadow">
+    <div className="h-[300px] md:w-[300px] overflow-y-scroll w-[100%]">
+      <div className="p-4 rounded-lg border w-[100%] bg-blue-50 shadow">
         <h2 className="text-xl font-bold mb-4 text-blue-900">
           {date || "Event Updates"}
         </h2>
-        <div className="space-y-4">
+        <div className="space-y-4 gap-5">
           {events.length === 0 ? (
             <div className="text-sm text-gray-500">No events found.</div>
           ) : (

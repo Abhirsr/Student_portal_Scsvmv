@@ -7,11 +7,11 @@ interface InfoCardProps {
   icon?: LucideIcon;
 }
 
-export default function InfoCard({ title, value, icon: Icon }: InfoCardProps) {
+export default function Scorecard({ title, value, icon: Icon }: InfoCardProps) {
   const isNumber = typeof value === "number";
   return (
-    <Card className="border-none shadow-none p-0 bg-transparent">
-      <CardContent className="flex items-center gap-5">
+    <Card className=" p-3 bg-transparent w-full border-1 border-gray-300 shadow-l">
+      <CardContent className="flex items-center md:gap-5 justify-center gap-10">
         {/* Icon Circle */}
         <div className="bg-[#E5F0FA] p-4 rounded-full flex items-center justify-center">
           {Icon && <Icon className="w-8 h-8 text-[#005AA3]" />}
