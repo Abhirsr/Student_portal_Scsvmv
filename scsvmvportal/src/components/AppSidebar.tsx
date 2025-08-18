@@ -35,6 +35,8 @@ import {
   SidebarMenuSubItem,
   SidebarMenuSub,
   SidebarMenuSubButton,
+  SidebarHeader,
+  SidebarTrigger,
 } from "@/components/ui/sidebar";
 import {
   Collapsible,
@@ -112,7 +114,10 @@ const signOutLink = {
 
 export function AppSidebar() {
   return (
-    <Sidebar collapsible="icon" className="bg-white pt-5">
+    <Sidebar className="bg-white pt-5" collapsible="icon">
+      <SidebarHeader className="flex items-end justify-end">
+        <SidebarTrigger />
+      </SidebarHeader>
       <SidebarContent className="bg-white">
         <SidebarGroup>
           <SidebarMenu>
