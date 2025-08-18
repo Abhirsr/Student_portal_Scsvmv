@@ -9,7 +9,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
   return (
     <SidebarProvider>
       <div>
-        <Header />
+        <Header isLoggedin={true}/>
       </div>
       <div className="flex pt-[100px] w-[100%]">
         <aside className="min-h-screen">

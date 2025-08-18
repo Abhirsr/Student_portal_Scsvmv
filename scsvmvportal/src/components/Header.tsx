@@ -2,11 +2,13 @@
 import React from "react";
 import Image from "next/image";
 import { SidebarTrigger } from "./ui/sidebar";
-import { useSidebar } from "./ui/sidebar";
 
-const Header = () => {
+const Header = ({ isLoggedin }: { isLoggedin: boolean }) => {
   return (
     <div className="w-[100%] flex items-center justify-center text-white bg-[linear-gradient(90deg,#0369A1_20%,#00A8EB_50%,#00BFFF_65%,#0369A1_90%)] fixed top-0 left-0 md:h-[100px]">
+      {isLoggedin && (
+        <SidebarTrigger className="md:hidden absolute top-3 left-0 bg-white text-black rounded-none h-[40px] w-[20px] rounded-br-sm rounded-tr-sm" />
+      )}
       <Image
         src="/logo.jpg"
         width={70}
