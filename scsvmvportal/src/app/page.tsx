@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Header from "@/components/Header";
-import type { Metadata } from "next";
 
 // 👉 Import icons from react-icons
 import { FcGoogle } from 'react-icons/fc';
