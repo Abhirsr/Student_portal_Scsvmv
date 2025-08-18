@@ -1,30 +1,30 @@
-'use client'
+"use client";
 
 type EventItem = {
-  title: string
-  time: string
-  status: 'approved' | 'rejected' | 'pending' // 🔁 scalable
-}
+  title: string;
+  time: string;
+  status: "approved" | "rejected" | "pending"; // 🔁 scalable
+};
 
 interface EventUpdatesProps {
-  events: EventItem[]
-  date?: string
+  events: EventItem[];
+  date?: string;
 }
 
 const statusColor = {
-  approved: 'text-green-600',
-  rejected: 'text-red-600',
-  pending: 'text-yellow-600',
-}
+  approved: "text-green-600",
+  rejected: "text-red-600",
+  pending: "text-yellow-600",
+};
 
 const EventUpdates = ({ events, date }: EventUpdatesProps) => {
   return (
-    <div className="h-50px md:w-40px w-full">
-      <div className="p-4 rounded-lg border w-full max-w-sm bg-blue-50 shadow">
+    <div className="h-[300px] md:w-[300px] overflow-y-scroll w-[100%]">
+      <div className="p-4 rounded-lg border w-[100%] bg-blue-50 shadow">
         <h2 className="text-xl font-bold mb-4 text-blue-900">
-          {date || 'Event Updates'}
+          {date || "Event Updates"}
         </h2>
-        <div className="space-y-4">
+        <div className="space-y-4 gap-5">
           {events.length === 0 ? (
             <div className="text-sm text-gray-500">No events found.</div>
           ) : (
@@ -46,7 +46,7 @@ const EventUpdates = ({ events, date }: EventUpdatesProps) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default EventUpdates
+export default EventUpdates;
