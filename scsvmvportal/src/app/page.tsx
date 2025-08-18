@@ -14,7 +14,7 @@ function page() {
 
   return (
     <div className="w-screen h-screen flex flex-col">
-      <Header loggedIn={false} />
+      <Header loggedIn= {false} />
       {/* 👉 Added padding here for better spacing on small screens */}
       <main className="flex-grow flex items-center justify-center p-4">
         {/* loginpage */}
