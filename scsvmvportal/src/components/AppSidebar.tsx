@@ -115,7 +115,7 @@ const signOutLink = {
 export function AppSidebar() {
   return (
     <Sidebar className="bg-white pt-5" collapsible="icon">
-      <SidebarHeader className="flex items-end justify-end">
+      <SidebarHeader className="md:flex md:items-end md:justify-end hidden">
         <SidebarTrigger />
       </SidebarHeader>
       <SidebarContent className="bg-white">

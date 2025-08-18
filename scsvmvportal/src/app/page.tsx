@@ -1,25 +1,24 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Header from "@/components/Header";
 
 // 👉 Import icons from react-icons
-import { FcGoogle } from 'react-icons/fc';
-import { HiEye, HiEyeOff } from 'react-icons/hi';
-import {PiSignIn} from 'react-icons/pi';
+import { FcGoogle } from "react-icons/fc";
+import { HiEye, HiEyeOff } from "react-icons/hi";
+import { PiSignIn } from "react-icons/pi";
 
 function page() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className="w-screen h-screen flex flex-col">
-      <Header loggedIn= {false} />
+      <Header isLoggedin={false} />
       {/* 👉 Added padding here for better spacing on small screens */}
       <main className="flex-grow flex items-center justify-center p-4">
         {/* loginpage */}
         {/* 👉 RESPONSIVE CONTAINER: Removed fixed width and height. Added max-width and responsive margins. */}
         <div className="w-full max-w-lg mx-auto py-5 rounded-md border-[#0369A1] border-2 bg-white shadow-md">
-
           <h2 className="mb-2 text-center text-[27px] font-bold text-[#0369A1] p-2">
             Student Login
           </h2>
@@ -28,8 +27,8 @@ function page() {
             {/* 👉 RESPONSIVE PADDING: Reduced padding on mobile, increased on medium screens and up. */}
             <div className="space-y-5 px-8 md:px-16">
               <div>
-                <label 
-                  htmlFor="username" 
+                <label
+                  htmlFor="username"
                   className="mb-1 block text-sm font-bold text-[#0369A1]"
                 >
                   User Name
@@ -43,15 +42,15 @@ function page() {
               </div>
 
               <div>
-                <label 
-                  htmlFor="password" 
+                <label
+                  htmlFor="password"
                   className="mb-1 block text-sm font-bold text-[#0369A1]"
                 >
                   Password
                 </label>
                 <div className="relative">
                   <input
-                    type={showPassword ? 'text' : 'password'}
+                    type={showPassword ? "text" : "password"}
                     id="password"
                     placeholder="Enter Password"
                     className="w-full rounded-md border border-gray-300 p-2 pr-10 focus:border-blue-500 focus:ring-blue-500 text-[#34495E]"
@@ -77,18 +76,21 @@ function page() {
                 type="submit"
                 className="flex w-full items-center justify-center space-x-2 rounded-md bg-[#0072bc] p-1 px-1 font-semibold text-white hover:bg-[#0369A1]"
               >
-                  <PiSignIn className="h-5 w-5" />
+                <PiSignIn className="h-5 w-5" />
                 <span>Sign In</span>
               </button>
             </div>
           </form>
 
           <div className="mt-0.5 text-center p-[1px]">
-            <a href="#" className="text-sm text-blue-600 p-0.25 hover:underline mt-2 block">
+            <a
+              href="#"
+              className="text-sm text-blue-600 p-0.25 hover:underline mt-2 block"
+            >
               Forgot Password
             </a>
           </div>
-          
+
           {/* 👉 RESPONSIVE PADDING for the divider */}
           <div className="my-3 flex items-center px-8 md:px-16">
             <div className="flex-grow border-t border-gray-300"></div>
@@ -106,7 +108,6 @@ function page() {
               <span>Continue with google</span>
             </button>
           </div>
-
         </div>
       </main>
     </div>
