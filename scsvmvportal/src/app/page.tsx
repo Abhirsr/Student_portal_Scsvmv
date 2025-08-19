@@ -2,14 +2,12 @@
 
 import React, { useState } from "react";
 import Header from "@/components/Header";
-import type { Metadata } from "next";
 
-// 👉 Import icons from react-icons
 import { FcGoogle } from "react-icons/fc";
 import { HiEye, HiEyeOff } from "react-icons/hi";
 import { PiSignIn } from "react-icons/pi";
 
-function page() {
+export function page() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
