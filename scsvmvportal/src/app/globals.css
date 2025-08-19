@@ -38,6 +38,14 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  /* Main Element Colours */
+  --header-gradient: linear-gradient(
+    90deg,
+    #0369a1 20%,
+    #00a8eb 50%,
+    #00bfff 65%,
+    #0369a1 90%
+  );
 }
 
 @theme inline {
@@ -81,7 +89,6 @@
 }
 
 body {
-
   font-family: var(--font-inter);
 }
 
@@ -126,4 +133,110 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+/* Prevent horizontal overflow */
+.dashboard-container {
+  max-width: none;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure charts don't overflow */
+.chart-container {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Exam board and leave status layout */
+.exam-board-container {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.leave-status-container {
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Responsive layout adjustments for sidebar state */
+@media (max-width: 1280px) {
+  .dashboard-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* When sidebar is collapsed, adjust spacing */
+.sidebar-collapsed .dashboard-container {
+  margin-left: 0;
+  width: 100%;
+}
+
+/* Header responsive behavior */
+.header-container {
+  width: 100%;
+  min-width: 100%;
+}
+
+/* Ensure header fills full width when sidebar is collapsed */
+@media (min-width: 1024px) {
+  .header-container {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+/* Force header to full width */
+.header-container > div {
+  width: 100% !important;
+  min-width: 100% !important;
+}
+
+/* Ensure header background extends fully */
+.header-container {
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+/* Override any max-width constraints */
+.header-container,
+.header-container > div {
+  max-width: none !important;
+}
+
+/* Dashboard content expansion when sidebar is collapsed */
+.dashboard-container {
+  transition: all 0.3s ease;
+}
+
+/* Ensure content expands to fill available space */
+.dashboard-container > div {
+  width: 100%;
+  max-width: none;
 }
