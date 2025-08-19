@@ -112,3 +112,5 @@ export function page() {
     </div>
   );
 }
+
+export default page;

@@ -5,7 +5,7 @@ import { SidebarTrigger } from "./ui/sidebar";
 
 const Header = ({ isLoggedin }: { isLoggedin: boolean }) => {
   return (
-    <div className="w-[100%] flex items-center justify-center text-white bg-[linear-gradient(90deg,#0369A1_20%,#00A8EB_50%,#00BFFF_65%,#0369A1_90%)] fixed top-0 left-0 md:h-[100px]">
+    <div className="w-[100%] flex items-center justify-center text-white bg-[linear-gradient(90deg,#0369A1_20%,#00A8EB_50%,#00BFFF_65%,#0369A1_90%)] fixed top-0 left-0 md:h-[100px] z-[1]">
       {isLoggedin && (
         <SidebarTrigger className="md:hidden absolute top-3 left-0 bg-white text-black rounded-none h-[40px] w-[20px] rounded-br-sm rounded-tr-sm" />
       )}

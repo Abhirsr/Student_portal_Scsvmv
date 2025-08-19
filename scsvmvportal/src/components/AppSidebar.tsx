@@ -58,7 +58,7 @@ const sidebarLinks = [
     sublinks: [
       { title: "Attendance", href: "/attendance", icon: FaCalendarAlt },
       { title: "Internal Marks", href: "/internal-marks", icon: FaFileAlt },
-      { title: "Semester Subjects", href: "/semester-subjects", icon: FaBook },
+      { title: "Semester Subjects", href: "/subjects", icon: FaBook },
       { title: "Results", href: "/results", icon: FaCheckCircle },
       {
         title: "Course Certificates",
