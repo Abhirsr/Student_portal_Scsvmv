@@ -1,6 +1,5 @@
-
 import React from "react";
-import InfoCards from "@/components/Hosteldetails";
+import InfoCards from "@/components/Inforcards";
 const page = () => {
   return (
     <div className="flex md:flex-row flex-col justify-center p-8 w-full">
