@@ -1,7 +1,5 @@
 import React from "react";
 import {
-  FaUser,
-  FaSignOutAlt,
   FaCalendarAlt,
   FaFileAlt,
   FaCheckCircle,

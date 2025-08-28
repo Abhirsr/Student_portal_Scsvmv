@@ -1,6 +1,7 @@
 import React from "react";
 import { DataTable } from "@/components/DataTable";
 import { columns } from "./columns";
+import { IoBookOutline } from "react-icons/io5";
 
 const data = [
   {
@@ -112,8 +113,21 @@ const data = [
 
 const page = () => {
   return (
-    <div className="p-10">
-      <DataTable columns={columns} data={data} />
+    <div>
+      <div className="p-10">
+        <div className="text-[#0369a1] font-bold text-[20px] flex items-center gap-1">
+          <IoBookOutline className="size-5" />
+          <p>CURRENT SEMESTER SUBJECTS</p>
+        </div>
+        <DataTable columns={columns} data={data} filterColumn="description" />
+      </div>
+      <div className="p-10">
+        <div className="text-[#0369a1] font-bold text-[20px] flex items-center gap-1">
+          <IoBookOutline className="size-5" />
+          <p>SEMESTER WISE SUBJECTS</p>
+        </div>
+        <DataTable columns={columns} data={data} filterColumn="description" />
+      </div>
     </div>
   );
 };
