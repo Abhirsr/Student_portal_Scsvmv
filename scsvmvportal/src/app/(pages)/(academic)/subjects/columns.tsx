@@ -53,6 +53,8 @@ export const columns: ColumnDef<Subject>[] = [
     header: "Credits",
   },
   {
+    accessorKey: "actions",
+    header: "Actions  ",
     id: "actions",
     cell: ({ row }) => {
       const subject = row.original;
