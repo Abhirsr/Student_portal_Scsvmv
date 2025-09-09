@@ -81,12 +81,12 @@ const sidebarLinks = [
   },
   {
     title: "Leave Requests",
-    href: "/on-duty",
+    href: "/leave-requests",
     icon: LuClipboardList,
     sublinks: [
-      { title: "On Duty", href: "/on-duty", icon: FaUserTie },
-      { title: "Medical Leave", href: "/medical-leave", icon: FaUserInjured },
-      { title: "Internship", href: "/internship", icon: FaBriefcase },
+      { title: "On Duty", href: "/leave-requests/on-duty", icon: FaUserTie },
+      { title: "Medical Leave", href: "/leave-requests/medical-leave", icon: FaUserInjured },
+      { title: "Internship", href: "/leave-requests/internship", icon: FaBriefcase },
     ],
   },
   {

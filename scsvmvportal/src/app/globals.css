@@ -240,3 +240,18 @@ body {
   width: 100%;
   max-width: none;
 }
+
+/* Remove calendar picker button from date inputs */
+.no-calendar::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+.no-calendar::-moz-calendar-picker-indicator {
+  display: none;
+}
+
+.no-calendar::-ms-clear,
+.no-calendar::-ms-expand {
+  display: none;
+}
